@@ -51,7 +51,7 @@ You may customize the plugin to your liking
 ]
 ```
 
-The default are
+The defaults are
 
 ```js
 const DEFAULT_OPTIONS = {
