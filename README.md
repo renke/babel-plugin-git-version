@@ -10,7 +10,7 @@ deployed.
 npm install --save-dev babel-plugin-git-version
 ```
 
-Also make sure what `git` is in your `$PATH`.
+Also make sure that `git` is in your `$PATH`.
 
 ## Usage
 
@@ -32,6 +32,16 @@ tag (or "unknown" if those values can't be parsed).
 console.log(`Version: ${GIT_TAG} (${GIT_COMMIT})`);
 ```
 
+To avoid [eslint](https://github.com/eslint/eslint) warnings just add this to
+your config
+
+```json
+"globals": {
+  "GIT_COMMIT": false,
+  "GIT_TAG": false,
+},
+```
+
 You may customize the plugin to your liking
 
 ```json
@@ -45,7 +55,7 @@ You may customize the plugin to your liking
       "commitConstantName": "COMMIT",
       "tagConstantName": "TAG",
 
-      "commitLength": 7,
+      "commitLength": 7
     }
   ]
 ]
