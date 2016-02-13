@@ -29,7 +29,7 @@
   "repository": "renke/babel-plugin-git-version",
   "license": "ISC",
   "name": "babel-plugin-git-version",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "babel-plugin-git-version",
   "private": false,
   "author": {
