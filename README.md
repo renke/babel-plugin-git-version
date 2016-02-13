@@ -1,6 +1,6 @@
 # babel-plugin-git-version
 
-Expose the the current commit's hash and the name of "nearest" tag as constants
+Expose the current commit's hash and the name of "nearest" tag as constants
 in your code. Useful to quickly find out what version of your application is
 deployed.
 
