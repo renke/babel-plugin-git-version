@@ -29,7 +29,7 @@
   "repository": "renke/babel-plugin-git-version",
   "license": "ISC",
   "name": "babel-plugin-git-version",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Expose the current commit's hash and the name of \"nearest\" tag as constants in your code. Useful to quickly find out what version of your application is deployed.",
   "private": false,
   "author": {
