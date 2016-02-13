@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-npm install --save babel-plugin-git-version
+npm install --save-dev babel-plugin-git-version
 ```
 
 ## Usage

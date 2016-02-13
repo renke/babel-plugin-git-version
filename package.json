@@ -31,7 +31,7 @@
   "name": "babel-plugin-git-version",
   "version": "0.0.0",
   "description": "babel-plugin-git-version",
-  "private": true,
+  "private": false,
   "author": {
     "name": "Renke Grunwald",
     "email": "renke@renke.org"
