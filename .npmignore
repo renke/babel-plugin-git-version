@@ -1,0 +1,14 @@
+/.yo-rc.json
+
+/.editorconfig
+
+/.eslintrc
+
+/test
+
+/.npmignore
+babel-plugin-git-version-*.tgz
+
+/.babelrc
+
+/src

@@ -1,0 +1,40 @@
+{
+  "scripts": {
+    "generate": "yo @renke/node-lib",
+    "check": "eslint src test",
+    "watch:check": "watch \"npm run check --silent\"",
+    "test": "mocha --compilers js:babel-register",
+    "watch:test": "mocha --compilers js:babel-register --watch",
+    "prepublish": "npm run --production build",
+    "build": "babel src --out-dir lib",
+    "watch:build": "babel src --out-dir lib --watch"
+  },
+  "devDependencies": {
+    "eslint": "^1",
+    "babel-eslint": "^4",
+    "eslint-plugin-babel": "^3",
+    "eslint-plugin-import": "^0",
+    "eslint-config-import": "^0",
+    "mocha": "^2",
+    "chai": "^3",
+    "sinon": "^1",
+    "babel-cli": "^6",
+    "babel-register": "^6",
+    "babel-preset-es2015": "^6",
+    "babel-preset-stage-0": "^6",
+    "babel-preset-react": "^6",
+    "babel-plugin-transform-decorators-legacy": "^1",
+    "babel-plugin-transform-runtime": "^6"
+  },
+  "repository": "renke/babel-plugin-git-version",
+  "license": "ISC",
+  "name": "babel-plugin-git-version",
+  "version": "0.0.0",
+  "description": "babel-plugin-git-version",
+  "private": true,
+  "author": {
+    "name": "Renke Grunwald",
+    "email": "renke@renke.org"
+  },
+  "main": "lib"
+}
