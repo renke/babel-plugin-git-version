@@ -55,7 +55,9 @@ You may customize the plugin to your liking
       "commitConstantName": "COMMIT",
       "tagConstantName": "TAG",
 
-      "commitLength": 7
+      "showDirty": true,
+      "commitLength": 7,
+      "tagCommitLength": 7
     }
   ]
 ]
@@ -71,7 +73,10 @@ const DEFAULT_OPTIONS = {
   commitConstantName: "GIT_COMMIT",
   tagConstantName: "GIT_TAG",
 
+  showDirty: false,
+  
   commitLength: 40,
+  tagCommitLength: 0,
 };
 ```
 
