@@ -7,15 +7,17 @@ const DEFAULT_OPTIONS = {
   commitConstantName: "GIT_COMMIT",
   tagConstantName: "GIT_TAG",
 
+  showDirty: false,
+
   commitLength: 40,
+  tagCommitLength: 0,
 };
 
 export default makePlugin({getCommit, getTag});
 
 export function makePlugin({getCommit, getTag}) {
-  let commit = getCommit();
-  let tag = getTag();
-
+  let commit;
+  let tag;
   let pluginOptions;
 
   return ({types: t}) => {
@@ -24,12 +26,14 @@ export function makePlugin({getCommit, getTag}) {
         Program(path, {opts: options}) {
           pluginOptions = {...DEFAULT_OPTIONS, ...options};
 
+          commit = getCommit(pluginOptions)
           if (!commit) {
             commit = pluginOptions.commitDefaultValue;
           } else {
             commit = commit.substring(0, pluginOptions.commitLength);
           }
 
+          tag = getTag(pluginOptions)
           if (!tag) {
             tag = pluginOptions.tagDefaultValue;
           }
@@ -51,7 +55,7 @@ export function makePlugin({getCommit, getTag}) {
   };
 }
 
-function getCommit() {
+function getCommit(opts) {
   try {
     return execSync("git rev-parse HEAD", {stdio: ["ignore", "pipe", "ignore"]}).toString().trim();
   } catch (e) {
@@ -59,9 +63,10 @@ function getCommit() {
   }
 }
 
-function getTag() {
+function getTag(opts) {
   try {
-    return execSync("git describe --abbrev=0", {stdio: ["ignore", "pipe", "ignore"]}).toString().trim();
+    let cmd = ["git describe", `--abbrev=${opts.tagCommitLength}`, opts.showDirty ? "--dirty" : ""];
+    return execSync(cmd.join(" "), {stdio: ["ignore", "pipe", "ignore"]}).toString().trim();
   } catch (e) {
     return null;
   }
